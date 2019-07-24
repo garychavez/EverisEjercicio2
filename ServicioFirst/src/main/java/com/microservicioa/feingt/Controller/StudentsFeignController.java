@@ -25,7 +25,7 @@ public class StudentsFeignController {
 	
 	@GetMapping("/Get")
 	public List<Students> findAll(){
-		return studentsservice.finAll();
+		return studentsservice.findAll();
 		
 		
 	}

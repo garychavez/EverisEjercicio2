@@ -11,7 +11,7 @@ import com.microservicioa.feingt.model.Students;
 public interface StudentsFeignService{
 	
 	@GetMapping("/Get")	
-public List<Students> finAll();
+public List<Students> findAll();
 //public MSStudents finById(Integer id, Date date);
 
 }
