@@ -1,25 +1,30 @@
 package com.microservicioa.model.entity;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import lombok.Data;
+
 //Create my table
+@Data
 @Entity
 @Table(name = "Classes")
-public class Classes implements Serializable {
-
-	private static final long serialVersionUID = 2246957931235210701L;
+public class Classes {
 
 // Atributes
 	// primary key
@@ -29,14 +34,14 @@ public class Classes implements Serializable {
 	private int class_id;
 
 	// foreign key
-	@ManyToOne
-	@JoinColumn(name = "subject_id", referencedColumnName = "subject_id")
-	private Subjects subject_id;
-
-	// foreign key
-	@ManyToOne
-	@JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id")
-	private Teachers teacher_id;
+//	@ManyToOne
+//	@JoinColumn(name = "subject_id", referencedColumnName = "subject_id")
+//	private Subjects subject_id;
+//
+//	// foreign key
+//	@ManyToOne
+//	@JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id")
+//	private Teachers teacher_id;
 
 	@Column(name = "class_code")
 	@NotBlank
@@ -54,64 +59,9 @@ public class Classes implements Serializable {
 	@NotNull
 	private Date date_to;
 
-	
-//	Generate Getters and Setters
-	public int getClass_id() {
-		return class_id;
-	}
+	@OneToMany(mappedBy = "classesReference", fetch = FetchType.LAZY)
+	@JsonIgnoreProperties("classesReference")
+	private List<StudentClasses> studentReference;
 
-	public void setClass_id(int class_id) {
-		this.class_id = class_id;
-	}
-
-	public Subjects getSubject_id() {
-		return subject_id;
-	}
-
-	public void setSubject_id(Subjects subject_id) {
-		this.subject_id = subject_id;
-	}
-
-	public Teachers getTeacher_id() {
-		return teacher_id;
-	}
-
-	public void setTeacher_id(Teachers teacher_id) {
-		this.teacher_id = teacher_id;
-	}
-
-	public String getClass_code() {
-		return class_code;
-	}
-
-	public void setClass_code(String class_code) {
-		this.class_code = class_code;
-	}
-
-	public String getClass_name() {
-		return class_name;
-	}
-
-	public void setClass_name(String class_name) {
-		this.class_name = class_name;
-	}
-
-	public Date getDate_from() {
-		return date_from;
-	}
-
-	public void setDate_from(Date date_from) {
-		this.date_from = date_from;
-	}
-
-	public Date getDate_to() {
-		return date_to;
-	}
-
-	public void setDate_to(Date date_to) {
-		this.date_to = date_to;
-	}
-
-	
 	
 }
