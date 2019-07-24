@@ -5,13 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.microservicioa.model.entity.Classes;
 import com.microservicioa.model.repository.ClassesRepository;
 import com.microservicioa.model.repository.StudentClassesRepository;
 import com.microservicioa.model.service.ClassesService;
-import com.microservicioa.model.service.StudentClassesService;
 
 import lombok.AllArgsConstructor;
 

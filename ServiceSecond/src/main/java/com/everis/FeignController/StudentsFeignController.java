@@ -11,20 +11,16 @@ import com.everis.model.Students;
 import com.everis.service.StudentsFeignService;
 
 
-
 @RestController
 public class StudentsFeignController {
 
 	@Autowired
 	private StudentsFeignService studentsservice;
-//	@GetMapping("/Get/{id}")
-//	public Optional<Students> get(@Valid@PathVariable("id") Integer id) ;
 
-	
+
 	@GetMapping("/Get")
 	public List<Students> findAll(){
-		return studentsservice.finAll();
-		
-		
+		return studentsservice.finAll();	
 	}
+
 }

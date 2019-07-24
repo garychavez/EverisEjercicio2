@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.microservicioa.model.entity.Classes;
 import com.microservicioa.model.service.ClassesService;
+import com.microservicioa.model.serviceimplement.ClassesServiceImplement;
 
 @RestController
 @RequestMapping("/Classes")
@@ -24,7 +25,7 @@ public class ClassesController {
 	//our service is instantiated
 	
 		@Autowired
-		ClassesService classesService;
+		ClassesServiceImplement classesService;
 		
 		@PostMapping("/Save")
 		public Classes Save(@RequestBody Classes classes) throws Exception{

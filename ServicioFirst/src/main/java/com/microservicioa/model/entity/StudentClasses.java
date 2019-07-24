@@ -41,40 +41,6 @@ public class StudentClasses {
 	private Classes classesReference;
 
 
-	public int getStudentClasses_id() {
-		return StudentClasses_id;
-	}
-
-
-	public void setStudentClasses_id(int studentClasses_id) {
-		StudentClasses_id = studentClasses_id;
-	}
-
-
-	public int getStudent_id() {
-		return student_id;
-	}
-
-
-	public void setStudent_id(int student_id) {
-		this.student_id = student_id;
-	}
-
-
-	public Classes getClassesReference() {
-		return classesReference;
-	}
-
-
-	public void setClassesReference(Classes classesReference) {
-		this.classesReference = classesReference;
-	}
-	
-	
-	
-	
-
-
 
 	
 }
