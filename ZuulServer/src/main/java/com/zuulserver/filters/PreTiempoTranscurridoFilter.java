@@ -12,9 +12,9 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 
 @Component
-public class PreFilters extends ZuulFilter{
+public class PreTiempoTranscurridoFilter extends ZuulFilter{
 
-	private static Logger log= LoggerFactory.getLogger(PreFilters.class);
+	private static Logger log= LoggerFactory.getLogger(PreTiempoTranscurridoFilter.class);
 	
 //	validation
 	@Override
@@ -25,10 +25,15 @@ public class PreFilters extends ZuulFilter{
 //logic
 	@Override
 	public Object run() throws ZuulException {
-	RequestContext ctx =RequestContext.getCurrentContext();
-	HttpServletRequest request=ctx.getRequest();
-	long tiempoInicio = System.currentTimeMillis();
-	request.setAttribute("tiempoInicio", tiempoInicio);
+
+		RequestContext ctx = RequestContext.getCurrentContext();
+		HttpServletRequest request = ctx.getRequest();
+		
+		log.info(String.format("%s request enrutado a %s", request.getMethod(), request.getRequestURL().toString()));
+		
+		Long tiempoInicio = System.currentTimeMillis();
+		request.setAttribute("tiempoInicio", tiempoInicio);
+		
 		return null;
 	}
 

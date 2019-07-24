@@ -52,9 +52,7 @@ public class StudentsController {
 
 	
 	@GetMapping("/Get/{id}")
-	public Optional<Students> get(@Valid@PathVariable("id") Integer id) throws Exception {
-		
-		
+	public Optional<Students> get(@Valid@PathVariable("id") Integer id) throws Exception {			
 		return studentsService.get(id);
 	}
 
