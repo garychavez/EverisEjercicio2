@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -32,14 +34,14 @@ public class Classes {
 	private int class_id;
 
 	// foreign key
-//	@ManyToOne
-//	@JoinColumn(name = "subject_id", referencedColumnName = "subject_id")
-//	private Subjects subject_id;
-//
-//	// foreign key
-//	@ManyToOne
-//	@JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id")
-//	private Teachers teacher_id;
+	@ManyToOne
+	@JoinColumn(name = "subject_id", referencedColumnName = "subject_id")
+	private Subjects subject_id;
+
+	// foreign key
+	@ManyToOne
+	@JoinColumn(name = "teacher_id", referencedColumnName = "teacher_id")
+	private Teachers teacher_id;
 
 	@Column(name = "class_code")
 	@NotBlank
