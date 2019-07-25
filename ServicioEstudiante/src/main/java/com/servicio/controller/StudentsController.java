@@ -20,9 +20,7 @@ import com.servicio.model.Students;
 import com.servicio.service.StudentsService;
 
 @RestController
-@RequestMapping
-
-
+@RequestMapping("/Students")
 public class StudentsController {
 	
 	
