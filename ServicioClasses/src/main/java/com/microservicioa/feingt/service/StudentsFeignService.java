@@ -10,7 +10,7 @@ import com.microservicioa.feingt.model.Students;
 @FeignClient("MicroservicioStudent")
 public interface StudentsFeignService{
 	
-	@GetMapping("/Get")	
+	@GetMapping("/Students/Get")	
 public List<Students> findAll();
 //public MSStudents finById(Integer id, Date date);
 
