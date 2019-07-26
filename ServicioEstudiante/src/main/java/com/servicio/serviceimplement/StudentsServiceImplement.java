@@ -10,7 +10,9 @@ import com.servicio.model.Students;
 import com.servicio.repository.StudentsRepository;
 import com.servicio.service.StudentsService;
 
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Service
 public class StudentsServiceImplement implements StudentsService {
 

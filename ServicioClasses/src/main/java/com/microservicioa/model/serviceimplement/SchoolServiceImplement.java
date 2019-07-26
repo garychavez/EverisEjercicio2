@@ -11,7 +11,9 @@ import com.microservicioa.model.entity.School;
 import com.microservicioa.model.repository.SchoolRepository;
 import com.microservicioa.model.service.SchoolService;
 
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 @Service
 public class SchoolServiceImplement implements SchoolService {
 

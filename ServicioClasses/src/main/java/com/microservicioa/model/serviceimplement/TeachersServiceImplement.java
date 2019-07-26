@@ -11,7 +11,10 @@ import com.microservicioa.model.entity.Teachers;
 import com.microservicioa.model.repository.TeachersRepository;
 import com.microservicioa.model.service.TeachersService;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class TeachersServiceImplement implements TeachersService{
 
 	@Autowired

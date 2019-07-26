@@ -11,8 +11,11 @@ import com.microservicioa.model.entity.Subjects;
 import com.microservicioa.model.repository.SubjectsRepository;
 import com.microservicioa.model.service.SubjectsService;
 
+import lombok.AllArgsConstructor;
+
 
 @Service
+@AllArgsConstructor
 public class SubjectsServiceImplement implements SubjectsService {
 
 	@Autowired

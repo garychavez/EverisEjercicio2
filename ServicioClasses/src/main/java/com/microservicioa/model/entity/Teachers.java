@@ -12,7 +12,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import lombok.Data;
+
 //Create my table
+@Data
 @Entity
 @Table(name = "Teachers")
 public class Teachers implements Serializable {
@@ -51,68 +54,5 @@ public class Teachers implements Serializable {
 	@NotBlank
 	private String others_teacher_details;
 	
-	
-//	Generate Getters and Setters
-	public int getTeacher_id() {
-		return teacher_id;
-	}
 
-	public void setTeacher_id(int teacher_id) {
-		this.teacher_id = teacher_id;
-	}
-
-	public School getSchool_id() {
-		return school_id;
-	}
-
-	public void setSchool_id(School school_id) {
-		this.school_id = school_id;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getFirst_name() {
-		return first_name;
-	}
-
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
-	}
-
-	public String getMiddle_name() {
-		return middle_name;
-	}
-
-	public void setMiddle_name(String middle_name) {
-		this.middle_name = middle_name;
-	}
-
-	public String getLast_name() {
-		return last_name;
-	}
-
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-
-	public String getOthers_teacher_details() {
-		return others_teacher_details;
-	}
-
-	public void setOthers_teacher_details(String others_teacher_details) {
-		this.others_teacher_details = others_teacher_details;
-	}
-
-	
-
-	
-	
-	
-	
 }

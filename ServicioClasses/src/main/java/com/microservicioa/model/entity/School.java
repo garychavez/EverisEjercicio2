@@ -10,7 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import lombok.Data;
+
 //Create my table
+@Data
 @Entity
 @Table(name = "School")
 public class School implements Serializable {
@@ -28,23 +31,6 @@ public class School implements Serializable {
 	@NotBlank
 	private String school_name;
 
-	
-//	Generate Getters and Setters
-	public int getSchool_id() {
-		return school_id;
-	}
-
-	public void setSchool_id(int school_id) {
-		this.school_id = school_id;
-	}
-
-	public String getSchool_name() {
-		return school_name;
-	}
-
-	public void setSchool_name(String school_name) {
-		this.school_name = school_name;
-	}
 
 	
 }

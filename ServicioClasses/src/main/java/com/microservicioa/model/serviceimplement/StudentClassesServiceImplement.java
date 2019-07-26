@@ -10,6 +10,9 @@ import com.microservicioa.model.entity.StudentClasses;
 import com.microservicioa.model.repository.StudentClassesRepository;
 import com.microservicioa.model.service.StudentClassesService;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 @Service
 public class StudentClassesServiceImplement implements StudentClassesService {
 
