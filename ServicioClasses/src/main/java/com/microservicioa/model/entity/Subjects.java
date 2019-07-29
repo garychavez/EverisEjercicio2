@@ -9,7 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import lombok.Data;
+
 //Create my table
+@Data
 @Entity
 @Table(name = "Subjects")
 public class Subjects  {
