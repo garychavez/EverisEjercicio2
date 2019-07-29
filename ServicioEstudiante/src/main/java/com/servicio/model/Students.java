@@ -1,7 +1,5 @@
 package com.servicio.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,14 +10,13 @@ import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 
-//Create my table
+//Create  table
 @Data
 @Entity
 @Table(name = "Students")
 
 
-public class Students implements Serializable {
-
+public class Students {
 
 //Atributes
 		//	primary key

@@ -31,13 +31,13 @@ public class StudentsController {
 	
 //Annotations are used for CRUD methods
 	
-	@PostMapping("/Save")
+	@PostMapping
 	public Students save(@Valid@RequestBody Students students) throws Exception {
 		return studentsService.save(students);
 	}
 
 	
-	@PutMapping("/Update")
+	@PutMapping
 	public Students update(@Valid@RequestBody Students students) throws Exception {
 		return studentsService.update(students);
 	}
@@ -55,7 +55,7 @@ public class StudentsController {
 	}
 
 	
-	@GetMapping("/Get")
+	@GetMapping
 	public List<Students> findAll() throws Exception {
 		return studentsService.findAll(null);
 
