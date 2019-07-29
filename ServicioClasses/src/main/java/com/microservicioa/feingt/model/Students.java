@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Students {
-//clase estudiante para el feing
+//class Student for the feing
 	private int student_id;
 	private String gender;
 	private String first_name;
