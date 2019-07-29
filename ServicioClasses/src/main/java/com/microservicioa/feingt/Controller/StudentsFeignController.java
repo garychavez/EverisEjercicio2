@@ -25,12 +25,12 @@ public class StudentsFeignController {
 	private StudentsFeignService studentsFeignService;
 
 	
-	@GetMapping("/Get")
+	@GetMapping
 	public List<Students> findAll(){
 		return studentsFeignService.findAll();		
 	}
 	
-	@GetMapping("/Get/{id}")
+	@GetMapping("/{id}")
 	public Optional<Students> get(@Valid@PathVariable("id") Integer id)  {			
 		return studentsFeignService.get(id);
 	}

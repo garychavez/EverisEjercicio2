@@ -14,11 +14,11 @@ import com.microservicioa.feingt.model.Students;
 @FeignClient("MicroservicioStudent")
 public interface StudentsFeignService{
 	
-	@GetMapping("/Students/Get")	
+	@GetMapping("/Students")	
 public List<Students> findAll();
 	
 	
-	@GetMapping("/Students/Get/{id}")
+	@GetMapping("/Students/{id}")
 	public Optional<Students> get(@Valid@PathVariable("id") Integer id) ;
 
 }
