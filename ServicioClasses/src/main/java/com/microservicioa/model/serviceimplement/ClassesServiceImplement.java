@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.microservicioa.model.entity.Classes;
 import com.microservicioa.model.repository.ClassesRepository;
@@ -34,25 +35,25 @@ public class ClassesServiceImplement implements ClassesService {
 	}
 
 	@Override
-//	@Transactional
+	@Transactional
 	public Classes update(Classes model) throws Exception {
 		return classesRepository.save(model);
 	}
 
 	@Override
-//	@Transactional
+	@Transactional
 	public void delete(Integer id) throws Exception {
 		classesRepository.deleteById(id);;
 	}
 
 	@Override
-//	@Transactional(readOnly = true)
+	@Transactional(readOnly = true)
 	public Optional< Classes> get(Integer id) throws Exception {
 		return classesRepository.findById(id);
 	}
 
 	@Override
-//	@Transactional(readOnly = true)
+	@Transactional(readOnly = true)
 	public List<Classes> findAll(Classes model) throws Exception {
 		return classesRepository.findAll();
 	}

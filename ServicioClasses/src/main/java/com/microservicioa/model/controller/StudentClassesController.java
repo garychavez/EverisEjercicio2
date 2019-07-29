@@ -26,39 +26,31 @@ public class StudentClassesController {
 		@Autowired 
 		StudentClassesService studentClassesService;
 		
-		@PostMapping("/Save")
+		@PostMapping
 		public StudentClasses Save(@RequestBody StudentClasses studentClasses) throws Exception{
 			return studentClassesService.save(studentClasses);
 		}
 		
-		@PutMapping("/Update")
+		@PutMapping
 		public StudentClasses Update(@RequestBody StudentClasses studentClasses) throws Exception{
 			return studentClassesService.update(studentClasses);
 		}
 		
-		@DeleteMapping("/Delete/{id}")
+		@DeleteMapping("/{id}")
 		public void Delete(@PathVariable("id") Integer id) throws Exception {
 			studentClassesService.delete(id);
 		}
 		
-//		@GetMapping("/Get/{id}")
-//		public Optional< StudentClasses> Get(@PathVariable("id") Integer id) throws Exception {
-//			return studentClassesService.get(id);
-//		}
-		
-		@GetMapping("/Get")
+			@GetMapping("/{id}")
+		public Optional<StudentClasses> Get(@PathVariable("id") Integer id) throws Exception {
+			return studentClassesService.get(id);
+		}
+			
+		@GetMapping
 		public List<StudentClasses > findAll() throws Exception {
 			return studentClassesService.findAll(null);
 			
 		}
-		
-//		@GetMapping("Get/student/{idst}/class/{idcl}/datefrom/{date}")
-//		public StudentClasses Get(@PathVariable Integer student_id, @PathVariable Integer class_id , @PathVariable Date date_from) throws Exception {
-//			return studentClassesService.get(student_id,class_id,date_from);
-//		}
-		
-		@GetMapping("Get/{id}")
-		public Optional<StudentClasses> Get(@PathVariable("id") Integer id) throws Exception {
-			return studentClassesService.get(id);
-		}
+	
+
 }

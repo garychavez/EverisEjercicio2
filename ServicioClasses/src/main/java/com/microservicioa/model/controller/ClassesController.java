@@ -27,27 +27,27 @@ public class ClassesController {
 		@Autowired
 		ClassesServiceImplement classesService;
 		
-		@PostMapping("/Save")
+		@PostMapping
 		public Classes Save(@RequestBody Classes classes) throws Exception{
 			return classesService.save(classes);
 		}
 		
-		@PutMapping("/Update")
+		@PutMapping
 		public Classes Update(@RequestBody Classes classes) throws Exception{
 			return classesService.update(classes);
 		}
 		
-		@DeleteMapping("/Delete/{id}")
+		@DeleteMapping("/{id}")
 		public void Delete(@PathVariable("id") Integer id) throws Exception {
 			classesService.delete(id);
 		}
 		
-		@GetMapping("/Get/{id}")
+		@GetMapping("/{id}")
 		public Optional<Classes > Get(@PathVariable("id") Integer id) throws Exception {
 			return classesService.get(id);
 		}
 		
-		@GetMapping("/Get")
+		@GetMapping
 		public List<Classes > findAll() throws Exception {
 			return classesService.findAll(null);
 			

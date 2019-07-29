@@ -26,27 +26,27 @@ public class SchoolController {
 		@Autowired
 		SchoolService schoolService;
 		
-		@PostMapping("/Save")
+		@PostMapping
 		public School Save(@RequestBody School school) throws Exception{
 			return schoolService.save(school);
 		}
 		
-		@PutMapping("/Update")
+		@PutMapping
 		public School Update(@RequestBody School school) throws Exception{
 			return schoolService.update(school);
 		}
 		
-		@DeleteMapping("/Delete/{id}")
+		@DeleteMapping("/{id}")
 		public void Delete(@PathVariable("id") Integer id) throws Exception {
 			schoolService.delete(id);
 		}
 		
-		@GetMapping("/Get/{id}")
+		@GetMapping("/{id}")
 		public Optional<School > Get(@PathVariable("id") Integer id) throws Exception {
 			return schoolService.get(id);
 		}
 		
-		@GetMapping("/Get")
+		@GetMapping
 		public List< School> findAll() throws Exception {
 			return schoolService.findAll(null);
 			

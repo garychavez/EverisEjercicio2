@@ -28,27 +28,27 @@ public class TeachersController {
 		@Autowired
 		TeachersService teachersService;
 		
-		@PostMapping("/Save")
+		@PostMapping
 		public Teachers Save(@RequestBody Teachers teachers) throws Exception{
 			return teachersService.save(teachers);
 		}
 		
-		@PutMapping("/Update")
+		@PutMapping
 		public Teachers Update(@RequestBody Teachers teachers ) throws Exception{
 			return teachersService.save(teachers);
 		}
 		
-		@DeleteMapping("/Delete/{id}")
+		@DeleteMapping("/{id}")
 		public void Delete(@PathVariable("id") Integer id) throws Exception {
 			teachersService.delete(id);
 		}
 		
-		@GetMapping("/Get/{id}")
+		@GetMapping("/{id}")
 		public Optional<Teachers > Get(@PathVariable("id") Integer id) throws Exception {
 			return teachersService.get(id);
 			}
 		
-		@GetMapping("/Get")
+		@GetMapping
 		public List<Teachers > findAll() throws Exception {
 			return teachersService.findAll(null);
 			

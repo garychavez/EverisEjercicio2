@@ -26,27 +26,27 @@ public class SubjectsController {
 	@Autowired 
 	SubjectsService subjectsService;
 	
-	@PostMapping("/Save")
+	@PostMapping
 	public Subjects Save(@RequestBody Subjects subjects) throws Exception{
 		return subjectsService.save(subjects);
 	}
 	
-	@PutMapping("/Update")
+	@PutMapping
 	public Subjects Update(@RequestBody Subjects subjects) throws Exception{
 		return subjectsService.update(subjects);
 	}
 	
-	@DeleteMapping("/Delete/{id}")
+	@DeleteMapping("/{id}")
 	public void Delete(@PathVariable("id") Integer id) throws Exception {
 		subjectsService.delete(id);
 	}
 	
-	@GetMapping("/Get/{id}")
+	@GetMapping("/{id}")
 	public Optional<Subjects > Get(@PathVariable("id") Integer id) throws Exception {
 		return subjectsService.get(id);
 	}
 	
-	@GetMapping("/Get")
+	@GetMapping
 	public List<Subjects > findAll() throws Exception {
 		return subjectsService.findAll(null);
 		
