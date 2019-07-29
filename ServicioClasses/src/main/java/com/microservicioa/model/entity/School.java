@@ -1,7 +1,5 @@
 package com.microservicioa.model.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,9 +14,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "School")
-public class School implements Serializable {
-
-	private static final long serialVersionUID = -4739904381607885012L;
+public class School  {
 
 // Atributes
 	// primary key

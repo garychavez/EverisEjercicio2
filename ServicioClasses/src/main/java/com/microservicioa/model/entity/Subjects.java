@@ -1,6 +1,5 @@
 package com.microservicioa.model.entity;
 
-import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +12,7 @@ import javax.validation.constraints.NotBlank;
 //Create my table
 @Entity
 @Table(name = "Subjects")
-public class Subjects implements Serializable {
-
-	private static final long serialVersionUID = 5377773241105450002L;
+public class Subjects  {
 
 // Atributes
 	// primary key

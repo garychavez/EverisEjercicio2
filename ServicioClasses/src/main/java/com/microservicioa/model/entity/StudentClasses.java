@@ -29,7 +29,7 @@ public class StudentClasses {
 	
 
 
-	@Column(name = "student_id")
+	@Column(name = "Student_id")
 	private int student_id;
 
 	
@@ -37,7 +37,7 @@ public class StudentClasses {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("studentReference")
-	@JoinColumn(name = "studentReference")
+	@JoinColumn(name = "Classes_id")
 	private Classes classesReference;
 
 
