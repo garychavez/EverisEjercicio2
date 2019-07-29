@@ -43,13 +43,13 @@ public class StudentsController {
 	}
 
 	
-	@DeleteMapping("/Delete/{id}")
+	@DeleteMapping("/{id}")
 	public void delete(@Valid@PathVariable("id") Integer id) throws Exception {
 		studentsService.delete(id);
 	}
 
 	
-	@GetMapping("/Get/{id}")
+	@GetMapping("/{id}")
 	public Optional<Students> get(@Valid@PathVariable("id") Integer id) throws Exception {			
 		return studentsService.get(id);
 	}
