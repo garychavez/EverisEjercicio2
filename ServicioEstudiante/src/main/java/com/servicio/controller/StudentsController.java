@@ -51,6 +51,14 @@ public class StudentsController {
 	
 	@GetMapping("/{id}")
 	public Optional<Students> get(@Valid@PathVariable("id") Integer id) throws Exception {			
+		
+//				force error
+		boolean ok= false;
+		if(ok== false) {
+			throw new Exception("error al cargar el estudiante");
+		}
+			
+		
 		return studentsService.get(id);
 	}
 
