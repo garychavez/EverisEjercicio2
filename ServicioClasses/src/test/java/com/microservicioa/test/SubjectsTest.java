@@ -1,4 +1,4 @@
-package com.servicio.tests;
+package com.microservicioa.test;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -15,14 +15,14 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class StudentsTest {
+public class SubjectsTest {
 
 	@Autowired
 	private MockMvc mvc;
 	
 	@Test
 	public void findAll()throws Exception{
-		this.mvc.perform(get("/Students"))
+		this.mvc.perform(get("/Subjects"))
 		.andExpect(status().isOk())
 		.andExpect(content()
 		.contentType("application/json;charset=utf-8"));
@@ -30,8 +30,7 @@ public class StudentsTest {
 	
 	@Test
 	public void findById()throws Exception{
-		this.mvc.perform(get("/Students/1"))
+		this.mvc.perform(get("/Subjects/1"))
 		.andExpect(status().isOk());
 	}
-	
 }

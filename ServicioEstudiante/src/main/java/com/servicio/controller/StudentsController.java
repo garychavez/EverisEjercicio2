@@ -53,16 +53,16 @@ public class StudentsController {
 	public Optional<Students> get(@Valid@PathVariable("id") Integer id) throws Exception {			
 		
 //				force error
-		boolean ok= false;
-		if(ok== false) {
-			throw new Exception("error al cargar el estudiante");
-		}
-			
-		 try {
-				Thread.sleep(2000L);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//		boolean ok= false;
+//		if(ok== false) {
+//			throw new Exception("error al cargar el estudiante");
+//		}
+//			
+//		 try {
+//				Thread.sleep(2000L);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 		return studentsService.get(id);
 	}
 
