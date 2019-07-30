@@ -3,6 +3,7 @@ package com.microservicioa.model.entity;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -59,7 +60,7 @@ public class Classes {
 	@NotNull
 	private Date date_to;
 
-	@OneToMany(mappedBy = "classesReference", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "classesReference", fetch = FetchType.LAZY, orphanRemoval = true)
 	@JsonIgnoreProperties("classesReference")
 	private List<StudentClasses> studentReference;
 

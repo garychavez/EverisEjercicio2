@@ -28,7 +28,9 @@ public class ClassesServiceImplement implements ClassesService {
 	public Classes save(Classes model) throws Exception {
 		
 		Classes classesroom = classesRepository.save(model);
-		model.getStudentReference().forEach(studentClasses -> studentClasses.setClassesReference(classesroom));
+		model.getStudentReference()
+		.forEach(studentClasses -> studentClasses
+				.setClassesReference(classesroom));
 		
 		studentClasseRepository.saveAll(model.getStudentReference());
 		return classesroom;
@@ -43,6 +45,11 @@ public class ClassesServiceImplement implements ClassesService {
 	@Override
 	@Transactional
 	public void delete(Integer id) throws Exception {
+	
+//		classesroom.getStudentReference()
+//		.forEach(studentClasses -> studentClasseRepository
+//				.deleteById(studentClasses.getStudentClasses_id()));
+//				
 		classesRepository.deleteById(id);;
 	}
 
