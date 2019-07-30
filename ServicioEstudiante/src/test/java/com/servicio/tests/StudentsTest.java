@@ -27,4 +27,11 @@ public class StudentsTest {
 		.andExpect(content()
 		.contentType("application/json;charset=utf-8"));
 	}
+	
+	@Test
+	public void findById()throws Exception{
+		this.mvc.perform(get("/Students"))
+		.andExpect(status().isOk());
+	}
+	
 }
