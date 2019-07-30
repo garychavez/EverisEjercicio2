@@ -15,14 +15,14 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class SchoolTest {
+public class ClassesTest {
 
 	@Autowired
 	private MockMvc mvc;
 	
 	@Test
 	public void findAll()throws Exception{
-		this.mvc.perform(get("/School"))
+		this.mvc.perform(get("/Classes"))
 		.andExpect(status().isOk())
 		.andExpect(content()
 		.contentType("application/json;charset=utf-8"));
@@ -30,10 +30,7 @@ public class SchoolTest {
 	
 	@Test
 	public void findById()throws Exception{
-		this.mvc.perform(get("/School/1"))
+		this.mvc.perform(get("/Classes/1"))
 		.andExpect(status().isOk());
 	}
-	
-
-
 }
